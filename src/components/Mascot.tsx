@@ -13,10 +13,10 @@ export function Mascot() {
   return (
     <section id="opice" aria-labelledby="opice-h" ref={ref} className="halftone"
       onPointerMove={(e) => { const r = ref.current!.getBoundingClientRect(); mx.set(((e.clientX - r.left) / r.width) * 2 - 1) }}
-      style={{ position: 'relative', background: '#101638', color: '#FFF1D0', overflow: 'hidden', padding: 'clamp(64px, 9vw, 130px) 0' }}>
+      style={{ position: 'relative', background: '#101638', color: '#FFF1D0', overflow: 'hidden', padding: 'clamp(4rem, 9vw, 8.125rem) 0' }}>
       <div aria-hidden style={{ position: 'absolute', inset: 0, background: 'repeating-conic-gradient(from 0deg at 76% 55%, rgba(216,32,39,.28) 0 6deg, transparent 6deg 12deg)' }} />
       <Smoke count={5} />
-      <div className="wrap" style={{ position: 'relative', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 380px), 1fr))', gap: 40, alignItems: 'center' }}>
+      <div className="wrap" style={{ position: 'relative', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 23.75rem), 1fr))', gap: 40, alignItems: 'center' }}>
         <div>
           <p className="script" style={{ margin: 0, fontSize: 'clamp(1.8rem, 3.4vw, 2.5rem)', marginBottom: 8, color: '#F4C51B' }}>meet the monkey</p>
           <h2 id="opice-h" className="display" style={{ fontSize: 'clamp(3.4rem, 10vw, 9.5rem)', margin: '6px 0 18px' }}>
@@ -29,7 +29,7 @@ export function Mascot() {
         <motion.div style={{ rotate: tilt, x: shift, display: 'grid', justifyItems: 'center' }}
           initial={{ y: 120, opacity: 0, scale: 0.9 }} whileInView={{ y: 0, opacity: 1, scale: 1 }} viewport={{ once: true, margin: '-80px' }} transition={{ type: 'spring', stiffness: 90, damping: 12 }}>
           <img src="/assets/pepper-monkeys/mascot.webp" alt="Maskot Pepper Monkey's – opice v obleku s pivem a chilli papričkou v puse" loading="lazy" width={1000} height={1500}
-            style={{ height: 'min(640px, 72vh)', width: 'auto', maxWidth: '100%', objectFit: 'contain', animation: 'float 5s ease-in-out infinite', filter: 'drop-shadow(0 18px 24px rgba(0,0,0,.45))' }} />
+            style={{ height: 'min(40rem, 72vh)', width: 'auto', maxWidth: '100%', objectFit: 'contain', animation: 'float 5s ease-in-out infinite', filter: 'drop-shadow(0 18px 24px rgba(0,0,0,.45))' }} />
         </motion.div>
       </div>
     </section>

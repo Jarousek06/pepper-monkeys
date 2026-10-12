@@ -15,9 +15,9 @@ import { Smoke } from './Smoke'
 export function Visit() {
   return (
     <>
-      <section id="navstivte" aria-labelledby="visit-h" className="halftone" style={{ position: 'relative', background: '#D82027', color: '#FFF1D0', padding: 'clamp(56px, 8vw, 120px) 0', overflow: 'hidden' }}>
+      <section id="navstivte" aria-labelledby="visit-h" className="halftone" style={{ position: 'relative', background: '#D82027', color: '#FFF1D0', padding: 'clamp(3.5rem, 8vw, 7.5rem) 0', overflow: 'hidden' }}>
         <Smoke count={5} />
-        <div className="wrap" style={{ position: 'relative', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 380px), 1fr))', gap: 48 }}>
+        <div className="wrap" style={{ position: 'relative', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 23.75rem), 1fr))', gap: 48 }}>
           <div>
             <p className="script" style={{ margin: 0, fontSize: 'clamp(1.8rem, 3.4vw, 2.5rem)', marginBottom: 8, color: '#F4C51B' }}>see you there</p>
             <h2 id="visit-h" className="display" style={{ fontSize: 'clamp(3.6rem, 12vw, 11rem)', margin: '4px 0 24px' }}>
@@ -42,6 +42,17 @@ export function Visit() {
             </dl>
             <p style={{ fontSize: '.8rem', opacity: .65, margin: '14px 0 0' }}>Otevírací dobu prosím ověřte telefonicky nebo na Facebooku – může se měnit.</p>
           </div>
+        </div>
+        <div className="wrap" style={{ position: 'relative', marginTop: 48 }}>
+          <iframe
+            title={`Mapa: ${INFO.address}`}
+            src={`https://www.google.com/maps?q=${encodeURIComponent(INFO.address)}&output=embed`}
+            width="100%"
+            height="420"
+            style={{ border: '4px solid #070a1c', borderRadius: 22, boxShadow: '10px 10px 0 #070a1c', display: 'block' }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </section>
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Phone, X } from 'lucide-react'
 import { Logo } from './Logo'
 import { INFO } from '../lib/brand'
@@ -44,24 +44,21 @@ export function Nav() {
           </div>
         </div>
       </header>
-      <AnimatePresence>
-        {open && (
-          <motion.nav id="mnav" aria-label="Hlavní navigace"
-            initial={{ clipPath: 'circle(0% at 90% 5%)' }} animate={{ clipPath: 'circle(150% at 90% 5%)' }} exit={{ clipPath: 'circle(0% at 90% 5%)' }}
-            transition={{ duration: 0.6, ease: [0.7, 0, 0.2, 1] }}
-            style={{ position: 'fixed', inset: 0, zIndex: 55, background: '#D82027', display: 'grid', alignContent: 'center', padding: 'var(--pad)' }}
-            className="halftone">
-            <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'grid', gap: 4 }}>
-              {LINKS.map(([l, h], i) => (
-                <motion.li key={h} initial={{ y: 60, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.15 + i * 0.07 }}>
-                  <a href={h} onClick={() => setOpen(false)} className="display" style={{ fontSize: 'clamp(3rem, 11vw, 8rem)', textDecoration: 'none', color: '#FFF1D0', display: 'inline-block' }}>{l}</a>
-                </motion.li>
-              ))}
-            </ul>
-            <p className="script" style={{ fontSize: '1.7rem', color: '#F4C51B', margin: '1.5rem 0 0' }}>{INFO.address}</p>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+      {/* Always mounted and driven by `animate`: a stuck AnimatePresence exit used to leave an invisible layer over the page that swallowed every click. */}
+      <motion.nav id="mnav" aria-label="Hlavní navigace" inert={!open}
+        initial={false} animate={{ clipPath: open ? 'circle(150% at 90% 5%)' : 'circle(0% at 90% 5%)' }}
+        transition={{ duration: 0.6, ease: [0.7, 0, 0.2, 1] }}
+        style={{ pointerEvents: open ? 'auto' : 'none', visibility: open ? 'visible' : 'hidden', position: 'fixed', inset: 0, zIndex: 55, background: '#D82027', display: 'grid', alignContent: 'center', padding: 'var(--pad)' }}
+        className="halftone">
+        <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'grid', gap: 4 }}>
+          {LINKS.map(([l, h]) => (
+            <li key={h}>
+              <a href={h} onClick={() => setOpen(false)} className="display" style={{ fontSize: 'clamp(3rem, 11vw, 8rem)', textDecoration: 'none', color: '#FFF1D0', display: 'inline-block' }}>{l}</a>
+            </li>
+          ))}
+        </ul>
+        <p className="script" style={{ fontSize: '1.7rem', color: '#F4C51B', margin: '1.5rem 0 0' }}>{INFO.address}</p>
+      </motion.nav>
     </>
   )
 }

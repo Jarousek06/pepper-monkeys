@@ -27,15 +27,15 @@ export function Atmosphere() {
   }, [])
 
   return (
-    <section id="bar" ref={root} aria-labelledby="bar-h" style={{ background: '#070a1c', padding: 'clamp(56px, 8vw, 120px) 0', overflow: 'hidden' }}>
+    <section id="bar" ref={root} aria-labelledby="bar-h" style={{ background: '#070a1c', padding: 'clamp(3.5rem, 8vw, 7.5rem) 0', overflow: 'hidden' }}>
       <div className="wrap" style={{ position: 'relative' }}>
         <h2 id="bar-h" className="display" style={{ fontSize: 'clamp(3.4rem, 12vw, 11rem)', margin: 0 }}>
-          <BlurWords text="Večer" /> <span className="outline" style={{ color: 'transparent' }}><BlurWords text="patří" delay={0.15} /></span> <span style={{ color: '#D82027' }}><BlurWords text="nám." delay={0.3} /></span>
+          <BlurWords text="Večer" /> <span className="outline"><BlurWords text="patří" delay={0.15} /></span> <span style={{ color: '#D82027' }}><BlurWords text="nám." delay={0.3} /></span>
         </h2>
         <p style={{ maxWidth: '52ch', fontSize: '1.15rem', lineHeight: 1.55, margin: '18px 0 48px', opacity: .9 }}>
           Americký bar s venkovním posezením, skvělými koktejly, craft pivem a živou hudbou. Sedni si, objednej a nespěchej – lidé u nás obvykle zůstanou hodinu i dvě.
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: 'clamp(12px, 2vw, 28px)' }} className="gallery">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: 'clamp(.75rem, 2vw, 1.75rem)' }} className="gallery">
           {SHOTS.map((s) => (
             <figure key={s.n} data-speed={s.speed} style={{ margin: 0, position: 'relative', ...s.s }} className="shot">
               <div style={{ overflow: 'hidden', borderRadius: 14, border: '3px solid #FFF1D0', height: '100%', aspectRatio: s.s.aspectRatio }}>

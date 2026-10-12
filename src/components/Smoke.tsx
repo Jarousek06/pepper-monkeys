@@ -26,7 +26,7 @@ export function Smoke({ count = 7, style }: { count?: number; style?: CSSPropert
 /** Wavy divider: waves are painted in the colour of the NEXT section, smoke drifts across. */
 export function SmokeDivider({ from, to }: { from: string; to: string }) {
   return (
-    <div aria-hidden style={{ position: 'relative', height: 'clamp(70px, 10vw, 150px)', background: from, marginBottom: -1 }}>
+    <div aria-hidden style={{ position: 'relative', height: 'clamp(4.4rem, 10vw, 9.4rem)', background: from, marginBottom: -1 }}>
       <Smoke count={5} />
       <svg viewBox="0 0 1440 160" preserveAspectRatio="none" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
         <path d="M0 120c140-40 220 30 360 0s200-40 340-10 240 40 380-10 240-30 360 0v60H0z" fill={to} opacity=".5" />

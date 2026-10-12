@@ -13,7 +13,7 @@ export function Menu() {
 
   return (
     <motion.section id="menu" aria-labelledby="menu-h" animate={{ backgroundColor: cat.bg, color: cat.ink }} transition={{ duration: 0.6 }}
-      style={{ position: 'relative', padding: 'clamp(56px, 8vw, 120px) 0', ['--tab-ink' as string]: cat.ink, ['--tab-bg' as string]: cat.bg }}>
+      style={{ position: 'relative', padding: 'clamp(3.5rem, 8vw, 7.5rem) 0', ['--tab-ink' as string]: cat.ink, ['--tab-bg' as string]: cat.bg }}>
       <div className="wrap">
         <p className="script" style={{ margin: 0, fontSize: 'clamp(1.8rem, 3.4vw, 2.5rem)', marginBottom: 8, color: cat.accent }}>what's cooking</p>
         <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0 clamp(12px, 3vw, 40px)', margin: '0 0 24px' }}>
@@ -31,7 +31,7 @@ export function Menu() {
         <AnimatePresence mode="wait">
           <motion.div key={cat.id} id="menu-panel" role="tabpanel"
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.35 }}
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))', gap: 'clamp(28px, 5vw, 80px)', alignItems: 'start', marginTop: 28 }}>
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 26.25rem), 1fr))', gap: 'clamp(28px, 5vw, 80px)', alignItems: 'start', marginTop: 28 }}>
             <div style={{ position: 'relative' }}>
               <GlareCard style={{ ['--c-ink' as string]: '#070a1c', aspectRatio: '4 / 3', transform: 'rotate(-2deg)' }}>
                 <img src={IMG(cat.img)} alt={`${cat.label} – ilustrační foto`} loading="lazy" width={1800} height={1200} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
